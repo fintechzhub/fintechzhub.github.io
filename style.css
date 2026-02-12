@@ -4,8 +4,19 @@
   box-sizing:border-box;
 }
 
-body{
-  font-family: Arial, sans-serif;
+body {
+    background-color: #121212;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+	padding: 0;
+}
+/* content area auto-expanded*/
+.main-container, .section,.page-content {
+    flex: 1;
 }
 
 nav{
@@ -202,3 +213,345 @@ color: inherit;
     transform: translateY(0);
   }
 }
+
+
+/* --- New Card Design Start --- */
+
+.main-container {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Grid Layout (Mobile Default) --- */
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Desktop Setting --- */
+@media (min-width: 768px) {
+    .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* --- Card Design --- */
+.card {
+    background: #1e1e1e !important;
+    padding: 30px 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    color: white !important;
+    width: 100%;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background: #252525 !important;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+
+
+
+.card h3 {
+    margin: 15px 0 10px;
+    font-size: 1.4rem;
+    color: white !important; 
+    font-weight: 600;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #b0b0b0 !important;
+    margin: 0;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background: #252525 !important;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+.icon-box {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: white;
+}
+
+/* --- Card Colors --- */
+
+.card-red { border-color: #ff4757; }
+.card-red .icon-box { background: #ff4757; }
+
+.card-blue { border-color: #1e90ff; }
+.card-blue .icon-box { background: #1e90ff; }
+
+.card-purple { border-color: #a55eea; }
+.card-purple .icon-box { background: #a55eea; }
+
+.card-green { border-color: #2ed573; }
+.card-green .icon-box { background: #2ed573; }
+
+.card-orange { border-color: #ffa502; }
+.card-orange .icon-box { background: #ffa502; }
+
+.card-cyan { border-color: #00d2d3; }
+.card-cyan .icon-box { background: #00d2d3; }
+
+/* --- Footer Fix --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    color: gray;
+    margin-top: 50px;
+    border-top: 1px solid #333;
+}
+
+/* --- New Card Design End --- */
+
+
+/* --- Hero Section Design --- */
+
+.hero-section {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #111 0%, #222 100%);
+    border-radius: 20px;
+    margin-bottom: 50px;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.hero-section h1 {
+    font-size: 2.8rem;
+    color: #2ed573;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    color: #ccc;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- Section Title Design --- */
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #2ed573;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* --- Footer Design --- */
+
+footer {
+    background-color: #000000;
+    color: #888888;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    border-top: 1px solid #222;
+}
+
+.footer-content p {
+    margin: 2px 0;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+/* --- Article Page Design --- */
+
+.page-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: left;
+}
+
+.page-content h1 {
+    color: #2ed573;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+}
+
+.page-content h2 {
+    color: white;
+    margin-top: 30px;
+    font-size: 1.8rem;
+}
+
+.page-content p {
+    color: #cccccc;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+
+/* --- Contact Page Design --- */
+
+.contact-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.contact-container h1 {
+    color: #2ed573;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-container p {
+    color: #cccccc;
+    margin-bottom: 30px;
+}
+
+.contact-box {
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    text-align: left;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    color: #ffffff;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.input-group input, 
+.input-group textarea {
+    width: 100%;
+    padding: 12px;
+    background: #252525;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.input-group input:focus, 
+.input-group textarea:focus {
+    border-color: #2ed573;
+}
+
+.contact-btn {
+    width: 100%;
+    padding: 12px;
+    background: #2ed573;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background 0.3s;
+}
+
+.contact-btn:hover {
+    background: #26af61;
+}
+
+.direct-info {
+    margin-top: 30px;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}
+
+.direct-info p {
+    color: #888;
+    font-size: 0.95rem;
+    margin: 5px 0;
+}
+
+/*--- mobile touch animation fix ---*/
+.card: active{
+	transform: translateY(-10px );
+	background:#252525 !important;
+	box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+	transition: transform 0.2s ease;
+}
+
+
+/* --- Optimized Card Design (Hover + Reveal) --- */
+.card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform 0.4s ease, opacity 0.6s ease-out, background 0.3s ease, box-shadow 0.3s ease;
+    background: #1e1e1e !important;
+    padding: 30px 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    color: white !important;
+    width: 100%;
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card.show:hover {
+    transform: translateY(-10px);
+    background: #252525 !important;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+.card.show:active {
+    transform: translateY(-5px);
+}
+
+
+
+
