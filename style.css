@@ -42,6 +42,8 @@ nav a:hover{
  
 }
 
+
+
 /* BODY BACKGROUND */
 body {
   margin: 0;
@@ -49,6 +51,7 @@ body {
   background: linear-gradient(to right, #0f172a, #020617);
   color: #e5e7eb;
 }
+
 
 /* NAVBAR */
 nav {
@@ -68,6 +71,7 @@ nav a {
 nav a:hover { 
 color:#38bdf8;
 }
+
 
 /* SECTION */
 .section {
@@ -132,6 +136,8 @@ color: inherit;
   margin:5px;
 }
 
+
+
 @media (max-width: 768px) {
 
   .navbar {
@@ -140,34 +146,36 @@ color: inherit;
   }
 
   .nav-links {
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background: #111;
-
-    display: none;
+    position: fixed;
+    top: 0px;
+    right: -260px;
+    width: 260px;
+	height:100vh;
+    background:#0f172a ;
+	padding-top:70px;
+    display: flex;
     flex-direction: column;
-    text-align: center;
-    z-index: 999;
+    transition:right 0.4s ease;
+    z-index: 1000;
   }
 
   .nav-links a {
     padding: 15px;
-    display: block;
     border-bottom: 1px solid #222;
   }
 
   .nav-links.active {
-    display: flex;
+    right:0;
   }
 
   .hamburger {
     display: block;
-    cursor: pointer;
+    position:fixed;
+	top:20px;
+	right:20px;
+	z-index:2000;
   }
 }
-
 /* Basic nav links */
 .nav-links {
   display: flex;
@@ -179,16 +187,27 @@ color: inherit;
   transform: translateY(0);
 }
 
-/* Mobile menu */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-  }
 
-  .nav-links.active {
-    display: flex;
-  }
+/* ===== Mobile Sidebar Override ===== */
+@media (max- width: 768px) {
+	.nav-links{
+		position: fixed;
+		top:0 ;
+		right:-260px ;
+		left: auto ;
+		width:260px ;
+		height:100vh ;
+		display: flex;
+		background: #0b0f1a ;
+		padding-top:70px;
+		transition:right0.4s ease;
+		flex-direction:column;
+		z-index:1100;
+	
+	}
+	.nav-links.active{
+		right:0;
+	}
 
   .nav-links a {
     opacity: 0;
@@ -207,12 +226,14 @@ color: inherit;
   .nav-links.active a:nth-child(6) { animation-delay: 0.3s; }
 }
 
+
 @keyframes navFade {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 
 
 /* --- New Card Design Start --- */
@@ -233,12 +254,14 @@ color: inherit;
     margin: 0 auto;
 }
 
+
 /* --- Desktop Setting --- */
 @media (min-width: 768px) {
     .card-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
 
 /* --- Card Design --- */
 .card {
@@ -313,6 +336,8 @@ color: inherit;
 
 .card-cyan { border-color: #00d2d3; }
 .card-cyan .icon-box { background: #00d2d3; }
+
+
 
 /* --- Footer Fix --- */
 footer {
@@ -551,6 +576,7 @@ footer {
 .card.show:active {
     transform: translateY(-5px);
 }
+
 
 
 

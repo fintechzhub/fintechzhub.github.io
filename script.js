@@ -2,12 +2,13 @@
 function toggleMenu(){
 	const nav =
   document.getElementById("navlinks");
-  if (nav) {
-  nav.classList.toggle("active");
-  }else{
-  console.error("navlinks id not fount on this page ");
+  
+  if (nav.classList.contains("active"))
+  {nav.classList.remove ("active");
+  } else {
+  nav.classList.add("active")
+  } 
   }
-}
 
 function reveal() {
     var reveals = document.querySelectorAll('.card');
@@ -22,4 +23,6 @@ function reveal() {
 }
 window.addEventListener('scroll', reveal);
 window.onload = reveal;
+
+
 
