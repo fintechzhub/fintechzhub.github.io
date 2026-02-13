@@ -5,4 +5,46 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <loc>https://fintechzhub.github.io/</loc>
           <priority>1.0</priority>
     </url>
+	
+	<url>
+  <loc>https://fintechzhub.github.io/finance.html</loc>
+          <priority>0.9</priority>
+    </url>
+	
+	<url>
+  <loc>https://fintechzhub.github.io/loan.html</loc>
+          <priority>0.9</priority>
+    </url>
+	
+	<url>
+  <loc>https://fintechzhub.github.io/credit_card.html</loc>
+          <priority>0.9</priority>
+    </url>
+	
+	<url>
+  <loc>https://fintechzhub.github.io/tech.html</loc>
+          <priority>0.8</priority>
+    </url>
+	
+	<url>
+  <loc>https://fintechzhub.github.io/bank_account.html</loc>
+          <priority>0.8</priority>
+    </url>
+	
+	<url>
+  <loc>https://fintechzhub.github.io/fitech_news.html</loc>
+          <priority>0.8</priority>
+    </url>
+	
+	<url>
+  <loc>https://fintechzhub.github.io/gov_schemes.html</loc>
+          <priority>0.8</priority>
+    </url>
+	
+	<url>
+  <loc>https://fintechzhub.github.io/contact_us.html</loc>
+          <priority>0.5</priority>
+    </url>
+	
+	
   </urlset>
