@@ -955,5 +955,45 @@ input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin
 
 
 
+@media screen and (max-width: 768px) {
 
+    /* 1. सबसे बाहरी लेयर (Full Width Layout) */
+    .full-width-layout {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important; /* बाहर का सारा सफेद गैप खत्म */
+        margin: 0 !important;
+    }
 
+    /* 2. बीच वाली लेयर (Section) - इसे बिल्कुल किनारे सटाएं */
+    .section {
+        width: 100% !important;
+        padding: 0 !important; /* यहाँ से भी गैप हटाया */
+        border: none !important;
+        border-radius: 0 !important;
+    }
+
+    /* 3. मुख्य कार्ड (Card Box) - इसे अब फैलने की जगह मिलेगी */
+    .card-review-box, 
+    .scheme-box, 
+    .calculator-card {
+        width: 100% !important;
+        margin: 10px 0 !important; /* ऊपर-नीचे थोड़ा गैप, साइड में 0 */
+        padding: 15px 8px !important; /* अंदर का टेक्स्ट किनारे न दबे इसलिए 8px गैप */
+        border-radius: 0 !important; /* किनारे तक सटाने के लिए गोलाई खत्म */
+        box-sizing: border-box !important;
+    }
+
+    /* 4. पीली लाइन और टेक्स्ट को सेट करना */
+    .card-review-box ul {
+        padding-left: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    .card-review-box ul li {
+        width: 100% !important;
+        padding: 8px 10px !important;
+        margin-left: 0 !important;
+        box-sizing: border-box !important;
+    }
+}
