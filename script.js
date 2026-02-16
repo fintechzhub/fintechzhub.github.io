@@ -25,140 +25,75 @@ window.addEventListener('scroll', reveal);
 window.onload = reveal;
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // --- Universal Function to Sync Slider & Text Box ---
-    function syncInputs(slider, text, callback) {
-        slider.addEventListener('input', function() {
-            text.value = slider.value;
-            callback();
-        });
-        text.addEventListener('input', function() {
-            slider.value = text.value;
-            callback();
-        });
+
+// ================= EMI CALCULATOR (MONTHS) =================
+function calcEMI() {
+    let P = parseFloat(document.getElementById('loan-amount-text').value);
+    let r = parseFloat(document.getElementById('interest-rate-text').value) / 12 / 100;
+    let n = parseFloat(document.getElementById('loan-months-text').value); // Direct Months
+
+    if (P > 0 && r > 0 && n > 0) {
+        let emi = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+        let totalPay = emi * n;
+        let totalInt = totalPay - P;
+
+        document.getElementById('monthly-emi').innerText = "₹ " + Math.round(emi).toLocaleString('en-IN');
+        document.getElementById('total-interest').innerText = "₹ " + Math.round(totalInt).toLocaleString('en-IN');
+        document.getElementById('emi-result').style.display = "block";
+
+        let intPer = (totalInt / totalPay) * 100;
+        document.getElementById('loan-chart').style.background = `conic-gradient(#38bdf8 0% ${100-intPer}%, #fbbf24 ${100-intPer}% 100%)`;
+    } else {
+        alert("कृपया सही जानकारी भरें!");
     }
+}
 
-    // ================= EMI CALCULATOR =================
-    const loanSlider = document.getElementById('loan-amount');
-    const loanText = document.getElementById('loan-amount-text');
-    const rateSlider = document.getElementById('interest-rate');
-    const rateText = document.getElementById('interest-rate-text');
-    const yearSlider = document.getElementById('loan-years');
-    const yearText = document.getElementById('loan-years-text');
+// ================= FD CALCULATOR (MONTHS) =================
+function calcFD() {
+    let P = parseFloat(document.getElementById('fd-amount-text').value);
+    let r = parseFloat(document.getElementById('fd-rate-text').value);
+    let months = parseFloat(document.getElementById('fd-months-text').value);
+    let t = months / 12; // Time in years for the bank formula
 
-    const out_emi = document.getElementById('monthly-emi');
-    const out_totalInt = document.getElementById('total-interest');
-    const chart_loan = document.getElementById('loan-chart');
+    if (P > 0 && r > 0 && months > 0) {
+        let A = P * Math.pow((1 + r / 400), (4 * t)); // Quarterly Compounding
+        let totalInt = A - P;
 
-    function calcEMI() {
-        let P = parseFloat(loanText.value);
-        let r = parseFloat(rateText.value) / 12 / 100;
-        let n = parseFloat(yearText.value) * 12;
+        document.getElementById('fd-maturity').innerText = "₹ " + Math.round(A).toLocaleString('en-IN');
+        document.getElementById('fd-interest').innerText = "₹ " + Math.round(totalInt).toLocaleString('en-IN');
+        document.getElementById('fd-result').style.display = "block";
 
-        if(P > 0 && r > 0 && n > 0) {
-            let emi = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
-            if (!isFinite(emi)) emi = 0;
-            
-            let totalPay = emi * n;
-            let totalInt = totalPay - P;
+        let intPer = (totalInt / A) * 100;
+        document.getElementById('fd-chart').style.background = `conic-gradient(#4ade80 0% ${100-intPer}%, #fbbf24 ${100-intPer}% 100%)`;
+    } else {
+        alert("कृपया सही जानकारी भरें!");
+    }
+}
 
-            out_emi.innerText = "₹ " + Math.round(emi).toLocaleString('en-IN');
-            out_totalInt.innerText = "₹ " + Math.round(totalInt).toLocaleString('en-IN');
-            
-            let intPer = (totalInt / totalPay) * 100;
-            chart_loan.style.background = `conic-gradient(#38bdf8 0% ${100-intPer}%, #fbbf24 ${100-intPer}% 100%)`;
+// ================= RD CALCULATOR (MONTHS) =================
+function calcRD() {
+    let P = parseFloat(document.getElementById('rd-amount-text').value);
+    let r = parseFloat(document.getElementById('rd-rate-text').value);
+    let n = parseFloat(document.getElementById('rd-months-text').value);
+
+    if (P > 0 && r > 0 && n > 0) {
+        let maturityAmount = 0;
+        for (let i = 0; i < n; i++) {
+            let monthsRemaining = n - i;
+            let interest = P * Math.pow((1 + r / 400), (4 * monthsRemaining / 12));
+            maturityAmount += interest;
         }
+
+        let totalInvested = P * n;
+        let totalInt = maturityAmount - totalInvested;
+
+        document.getElementById('rd-maturity').innerText = "₹ " + Math.round(maturityAmount).toLocaleString('en-IN');
+        document.getElementById('rd-interest').innerText = "₹ " + Math.round(totalInt).toLocaleString('en-IN');
+        document.getElementById('rd-result').style.display = "block";
+
+        let intPer = (totalInt / maturityAmount) * 100;
+        document.getElementById('rd-chart').style.background = `conic-gradient(#f472b6 0% ${100-intPer}%, #fbbf24 ${100-intPer}% 100%)`;
+    } else {
+        alert("कृपया सही जानकारी भरें!");
     }
-    // Sync EMI Inputs
-    syncInputs(loanSlider, loanText, calcEMI);
-    syncInputs(rateSlider, rateText, calcEMI);
-    syncInputs(yearSlider, yearText, calcEMI);
-
-
-    // ================= FD CALCULATOR =================
-    const fdSlider = document.getElementById('fd-amount');
-    const fdText = document.getElementById('fd-amount-text');
-    const fdRateSlider = document.getElementById('fd-rate');
-    const fdRateText = document.getElementById('fd-rate-text');
-    const fdYearSlider = document.getElementById('fd-years');
-    const fdYearText = document.getElementById('fd-years-text');
-
-    const out_fd_mat = document.getElementById('fd-maturity');
-    const out_fd_int = document.getElementById('fd-interest');
-    const chart_fd = document.getElementById('fd-chart');
-
-    function calcFD() {
-        let P = parseFloat(fdText.value);
-        let r = parseFloat(fdRateText.value);
-        let t = parseFloat(fdYearText.value);
-
-        if(P > 0 && r > 0 && t > 0) {
-            // Quarterly Compounding Formula
-            let A = P * Math.pow((1 + r / 400), (4 * t));
-            let totalInt = A - P;
-
-            out_fd_mat.innerText = "₹ " + Math.round(A).toLocaleString('en-IN');
-            out_fd_int.innerText = "₹ " + Math.round(totalInt).toLocaleString('en-IN');
-
-            let intPer = (totalInt / A) * 100;
-            chart_fd.style.background = `conic-gradient(#4ade80 0% ${100-intPer}%, #fbbf24 ${100-intPer}% 100%)`;
-        }
-    }
-    // Sync FD Inputs
-    syncInputs(fdSlider, fdText, calcFD);
-    syncInputs(fdRateSlider, fdRateText, calcFD);
-    syncInputs(fdYearSlider, fdYearText, calcFD);
-
-
-    // ================= RD CALCULATOR =================
-    const rdSlider = document.getElementById('rd-amount');
-    const rdText = document.getElementById('rd-amount-text');
-    const rdRateSlider = document.getElementById('rd-rate');
-    const rdRateText = document.getElementById('rd-rate-text');
-    const rdYearSlider = document.getElementById('rd-years');
-    const rdYearText = document.getElementById('rd-years-text');
-
-    const out_rd_mat = document.getElementById('rd-maturity');
-    const out_rd_int = document.getElementById('rd-interest');
-    const chart_rd = document.getElementById('rd-chart');
-
-    function calcRD() {
-        let P = parseFloat(rdText.value);
-        let r = parseFloat(rdRateText.value);
-        let t = parseFloat(rdYearText.value);
-        let totalMonths = t * 12;
-
-        if(P > 0 && r > 0 && t > 0) {
-            let totalMaturity = 0;
-            // Monthly Deposit + Quarterly Compounding Logic
-            for (let i = 0; i < totalMonths; i++) {
-                let monthsRemaining = totalMonths - i;
-                let interestPart = P * Math.pow((1 + r/400), (4 * monthsRemaining / 12));
-                totalMaturity += interestPart;
-            }
-
-            let totalInvested = P * totalMonths;
-            let totalInt = totalMaturity - totalInvested;
-
-            out_rd_mat.innerText = "₹ " + Math.round(totalMaturity).toLocaleString('en-IN');
-            out_rd_int.innerText = "₹ " + Math.round(totalInt).toLocaleString('en-IN');
-
-            let intPer = (totalInt / totalMaturity) * 100;
-            chart_rd.style.background = `conic-gradient(#f472b6 0% ${100-intPer}%, #fbbf24 ${100-intPer}% 100%)`;
-        }
-    }
-    // Sync RD Inputs
-    syncInputs(rdSlider, rdText, calcRD);
-    syncInputs(rdRateSlider, rdRateText, calcRD);
-    syncInputs(rdYearSlider, rdYearText, calcRD);
-
-    // Initial Calculation Run
-    calcEMI();
-    calcFD();
-    calcRD();
-});
-
-
-
-
+}

@@ -116,34 +116,30 @@
 </div>
 
 <section class="section calculators-section" style="margin-top: 50px; margin-bottom: 50px;">
-    <h2 style="text-align: center; color: #4ade80; margin-bottom: 20px;">Financial Tools - अपने Emi,Rd,Fd का हिसाब करे "FinTechz Hub के साथ </h2>
-    <p style="text-align: center; color: #94a3b8; margin-bottom: 40px;">स्लाइडर हिलाएं या बॉक्सं में टाइप करे Example:अगर आप  Rd,Fd या Emi निकल रहे है तो 3 महीने के लिए 0.3 का उपयोग करे और 9 महीने के लिए 0.9 का उपयोग करे और एक साल के लिए 1 का उपयोग करे ! </p>
+    <h2 style="text-align: center; color: #4ade80; margin-bottom: 30px;">फाइनेंशियल कैलकुलेटर (महीनों में)</h2>
     
     <div class="calculators-wrapper">
-        
         <div class="calculator-card" style="border-top: 4px solid #38bdf8;">
             <h3 style="color: #38bdf8;">EMI (Loan)</h3>
             <div class="inputs">
                 <div class="input-group">
-                    <label>लोन राशि (Amount):</label>
-                    <input type="number" id="loan-amount-text" class="manual-input" value="500000">
-                    <input type="range" id="loan-amount" min="10000" max="10000000" step="5000" value="500000">
+                    <label>लोन राशि (₹):</label>
+                    <input type="number" id="loan-amount-text" class="manual-input" placeholder="जैसे: 500000">
                 </div>
                 <div class="input-group">
                     <label>ब्याज दर (%):</label>
-                    <input type="number" id="interest-rate-text" class="manual-input" value="10.5" step="0.1">
-                    <input type="range" id="interest-rate" min="1" max="25" step="0.1" value="10.5">
+                    <input type="number" id="interest-rate-text" class="manual-input" placeholder="जैसे: 10.5">
                 </div>
                 <div class="input-group">
-                    <label>समय (Years): <small style="color:#64748b">(Ex: 0.5 = 6 Month)</small></label>
-                    <input type="number" id="loan-years-text" class="manual-input" value="5" step="0.1">
-                    <input type="range" id="loan-years" min="0.1" max="30" step="0.1" value="5">
+                    <label>समय (महीने/Months):</label>
+                    <input type="number" id="loan-months-text" class="manual-input" placeholder="जैसे: 60">
                 </div>
+                <button class="calc-btn" onclick="calcEMI()" style="background: #38bdf8;">Calculate EMI</button>
             </div>
-            <div class="results-mini">
+            <div id="emi-result" class="results-mini" style="display:none;">
                 <div class="pie-chart" id="loan-chart"></div>
-                <p>EMI: <strong id="monthly-emi" style="color: #4ade80;">₹ 10,747</strong></p>
-                <p>Total Interest: <strong id="total-interest" style="color: #fbbf24;">₹ 1.4 L</strong></p>
+                <p>मासिक EMI: <strong id="monthly-emi" style="color: #4ade80;">₹ 0</strong></p>
+                <p>कुल ब्याज: <strong id="total-interest" style="color: #fbbf24;">₹ 0</strong></p>
             </div>
         </div>
 
@@ -151,25 +147,23 @@
             <h3 style="color: #4ade80;">FD (Fixed Deposit)</h3>
             <div class="inputs">
                 <div class="input-group">
-                    <label>निवेश राशि (Invest):</label>
-                    <input type="number" id="fd-amount-text" class="manual-input" value="100000">
-                    <input type="range" id="fd-amount" min="1000" max="10000000" step="1000" value="100000">
+                    <label>निवेश राशि (₹):</label>
+                    <input type="number" id="fd-amount-text" class="manual-input" placeholder="जैसे: 100000">
                 </div>
                 <div class="input-group">
                     <label>ब्याज दर (%):</label>
-                    <input type="number" id="fd-rate-text" class="manual-input" value="6.5" step="0.1">
-                    <input type="range" id="fd-rate" min="1" max="15" step="0.1" value="6.5">
+                    <input type="number" id="fd-rate-text" class="manual-input" placeholder="जैसे: 6.5">
                 </div>
                 <div class="input-group">
-                    <label>समय (Years):</label>
-                    <input type="number" id="fd-years-text" class="manual-input" value="5" step="0.1">
-                    <input type="range" id="fd-years" min="0.1" max="20" step="0.1" value="5">
+                    <label>समय (महीने/Months):</label>
+                    <input type="number" id="fd-months-text" class="manual-input" placeholder="जैसे: 12">
                 </div>
+                <button class="calc-btn" onclick="calcFD()" style="background: #4ade80;">Calculate FD</button>
             </div>
-            <div class="results-mini">
+            <div id="fd-result" class="results-mini" style="display:none;">
                 <div class="pie-chart" id="fd-chart"></div>
-                <p>Maturity: <strong id="fd-maturity" style="color: #4ade80;">₹ 1.3 L</strong></p>
-                <p>Interest: <strong id="fd-interest" style="color: #fbbf24;">₹ 38 K</strong></p>
+                <p>मैच्योरिटी: <strong id="fd-maturity" style="color: #4ade80;">₹ 0</strong></p>
+                <p>कुल ब्याज: <strong id="fd-interest" style="color: #fbbf24;">₹ 0</strong></p>
             </div>
         </div>
 
@@ -177,28 +171,25 @@
             <h3 style="color: #f472b6;">RD (Recurring)</h3>
             <div class="inputs">
                 <div class="input-group">
-                    <label>मासिक जमा (Monthly):</label>
-                    <input type="number" id="rd-amount-text" class="manual-input" value="5000">
-                    <input type="range" id="rd-amount" min="500" max="100000" step="100" value="5000">
+                    <label>मासिक जमा (₹):</label>
+                    <input type="number" id="rd-amount-text" class="manual-input" placeholder="जैसे: 5000">
                 </div>
                 <div class="input-group">
                     <label>ब्याज दर (%):</label>
-                    <input type="number" id="rd-rate-text" class="manual-input" value="7.0" step="0.1">
-                    <input type="range" id="rd-rate" min="1" max="15" step="0.1" value="7.0">
+                    <input type="number" id="rd-rate-text" class="manual-input" placeholder="जैसे: 7.0">
                 </div>
                 <div class="input-group">
-                    <label>समय (Years):</label>
-                    <input type="number" id="rd-years-text" class="manual-input" value="5" step="0.1">
-                    <input type="range" id="rd-years" min="0.1" max="20" step="0.1" value="5">
+                    <label>समय (महीने/Months):</label>
+                    <input type="number" id="rd-months-text" class="manual-input" placeholder="जैसे: 24">
                 </div>
+                <button class="calc-btn" onclick="calcRD()" style="background: #f472b6;">Calculate RD</button>
             </div>
-            <div class="results-mini">
+            <div id="rd-result" class="results-mini" style="display:none;">
                 <div class="pie-chart" id="rd-chart"></div>
-                <p>Maturity: <strong id="rd-maturity" style="color: #4ade80;">₹ 3.5 L</strong></p>
-                <p>Interest: <strong id="rd-interest" style="color: #fbbf24;">₹ 59 K</strong></p>
+                <p>मैच्योरिटी: <strong id="rd-maturity" style="color: #4ade80;">₹ 0</strong></p>
+                <p>कुल ब्याज: <strong id="rd-interest" style="color: #fbbf24;">₹ 0</strong></p>
             </div>
         </div>
-
     </div>
 </section>
 
