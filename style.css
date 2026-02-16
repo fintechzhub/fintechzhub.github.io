@@ -579,5 +579,381 @@ footer {
 
 
 
+/* --- ULTIMATE FULL WIDTH FIX --- */
+
+.main-container, 
+.page-content, 
+.container,
+.hero-section {
+    width: 98% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    display: block !important;
+    flex: none !important;
+}
+
+.section, 
+article, 
+.content-box {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 40px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Removal of any side-gutters */
+main {
+    width: 100% !important;
+    display: block !important;
+}
+
+/* Footer Design */
+footer {
+    background: #0f172a;
+    padding: 40px 0 20px;
+    text-align: center;
+    border-top: 1px solid #1e293b;
+    margin-top: auto;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.footer-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #38bdf8;
+}
+
+
+
+/* Full Width Article Mastery */
+.full-width-layout {
+    width: 98% !important;
+    max-width: 1450px !important;
+    margin: 0 auto !important;
+    padding: 20px !important;
+    display: block !important;
+}
+
+.section {
+    width: 100% !important;
+    padding: clamp(25px, 5vw, 60px) !important;
+    background: #121926; /* Dark mode optimized */
+    border-radius: 20px;
+    box-sizing: border-box !important;
+    border: 1px solid rgba(56, 189, 248, 0.1);
+}
+
+h1 { color: #4ade80; margin-bottom: 25px; text-align: center; }
+h2 { color: #38bdf8; margin-top: 40px; margin-bottom: 20px; }
+p { font-size: 1.2rem; line-height: 1.8; color: #cbd5e1; margin-bottom: 20px; }
+li { font-size: 1.15rem; color: #cbd5e1; margin-bottom: 10px; margin-left: 20px; }
+
+.official-links-box {
+    margin-top: 50px;
+    padding: 30px;
+    background: rgba(56, 189, 248, 0.05);
+    border-left: 6px solid #38bdf8;
+    border-radius: 12px;
+}
+
+
+/* Scheme Box Styling */
+.scheme-box {
+    background: rgba(255, 255, 255, 0.05); /* हल्का पारदर्शी बैकग्राउंड */
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 5px solid #4ade80; /* हरे रंग की बॉर्डर */
+    transition: transform 0.3s ease;
+}
+
+.scheme-box:hover {
+    transform: translateY(-5px); /* माउस ले जाने पर थोड़ा ऊपर उठेगा */
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.scheme-box h3 {
+    margin-top: 0;
+    color: #4ade80;
+    font-size: 1.4rem;
+}
+
+.scheme-box a {
+    color: #38bdf8;
+    text-decoration: underline;
+}
+
+
+/* Credit Card Box Styling */
+.card-review-box {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-left: 5px solid #fbbf24; /* गोल्डन बॉर्डर */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.card-review-box h4 {
+    color: #fbbf24; /* गोल्डन कलर हेडिंग के लिए */
+    margin-top: 0;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.card-review-box p {
+    color: #e2e8f0;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.card-review-box ul {
+    list-style-type: none; /* बुलेट पॉइंट्स हटाकर कस्टम स्टाइल */
+    padding-left: 0;
+}
+
+.card-review-box ul li {
+    background: rgba(255, 255, 255, 0.05);
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border-left: 3px solid #38bdf8; /* ब्लू टिक मार्क जैसा */
+    font-size: 0.95rem;
+}
+
+.card-review-box a {
+    color: #4ade80; /* हरे रंग का लिंक */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.card-review-box a:hover {
+    text-decoration: underline;
+}
+
+/* Apply Button Styling */
+.apply-btn-container {
+    margin-top: 20px;
+}
+
+.apply-btn {
+    display: inline-block;
+    background: linear-gradient(45deg, #2563eb, #3b82f6); /* नीला ग्रेडिएंट */
+    color: white !important;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.4);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.apply-btn:hover {
+    background: linear-gradient(45deg, #1d4ed8, #2563eb);
+    transform: translateY(-2px); /* माउस ले जाने पर बटन ऊपर उठेगा */
+    box-shadow: 0 6px 12px rgba(37, 99, 235, 0.6);
+    text-decoration: none !important;
+}
+
+
+
+/* --- CALCULATOR SECTION STYLES --- */
+
+/* Wrapper for 3 Cards (Side by Side) */
+.calculators-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Mobile par automatic niche aa jayega */
+    gap: 25px;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* Individual Card Styling */
+.calculator-card {
+    background: #1e293b; /* Dark Card Background */
+    border: 1px solid #334155;
+    padding: 20px;
+    border-radius: 15px;
+    flex: 1; 
+    min-width: 300px; /* Mobile par size maintain karega */
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.calculator-card:hover {
+    transform: translateY(-5px); /* Mouse le jane par upar uthega */
+}
+
+.calculator-card h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+/* Input Fields */
+.input-group { margin-bottom: 15px; }
+.input-group label { 
+    color: #cbd5e1; 
+    font-size: 0.95rem; 
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 5px;
+}
+
+/* Custom Range Slider */
+input[type=range] {
+    width: 100%;
+    height: 6px;
+    background: #334155;
+    border-radius: 5px;
+    outline: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+/* Results Area */
+.results-mini {
+    background: rgba(0,0,0,0.2);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pie-chart {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    border: 3px solid #0f172a;
+    background: conic-gradient(#38bdf8 0% 100%);
+}
+
+.results-mini p {
+    color: #e2e8f0;
+    margin: 5px 0;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+/* --- CALCULATOR STYLES (Paste at Bottom) --- */
+
+.calculators-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.calculator-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    padding: 20px;
+    border-radius: 15px;
+    flex: 1; 
+    min-width: 300px;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.calculator-card h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+.input-group { margin-bottom: 15px; }
+.input-group label { color: #cbd5e1; font-size: 0.9rem; margin-bottom: 5px; display: block;}
+
+/* New: Typing Box Style */
+.manual-input {
+    width: 100%;
+    background: #0f172a;
+    border: 1px solid #334155;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    outline: none;
+    font-weight: bold;
+    box-sizing: border-box; /* Important */
+}
+.manual-input:focus { border-color: #38bdf8; }
+
+/* Slider Style */
+input[type=range] {
+    width: 100%;
+    height: 6px;
+    background: #334155;
+    border-radius: 5px;
+    outline: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Results Area */
+.results-mini {
+    background: rgba(0,0,0,0.2);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: center;
+}
+.pie-chart {
+    width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 15px;
+    border: 3px solid #0f172a; background: conic-gradient(#38bdf8 0% 100%);
+}
+.results-mini p {
+    color: #e2e8f0; margin: 5px 0; font-size: 1rem;
+    display: flex; justify-content: space-between;
+}
+/* Hide Number Arrows */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+
+
+
 
 
