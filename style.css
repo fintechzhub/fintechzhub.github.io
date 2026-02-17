@@ -905,3 +905,28 @@ input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin
         box-sizing: border-box !important;
     }
 }
+
+
+
+
+/* =========================================
+   SIDE GAPS FOR: Privacy, Disclaimer, Terms, About
+   ========================================= */
+@media screen and (max-width: 768px) {
+    
+    /* इन चारों पेजों की बॉडी पर 15px का गैप लगेगा */
+    .privacy-page body, 
+    .disclaimer-page body, 
+    .terms-page body, 
+    .about-page body {
+        padding: 0 15px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* इन पेजों के टेक्स्ट को सुंदर बनाने के लिए */
+    .privacy-page p, .disclaimer-page p, .terms-page p, .about-page p {
+        line-height: 1.6 !important;
+        margin-bottom: 15px !important;
+        text-align: left !important;
+    }
+}
