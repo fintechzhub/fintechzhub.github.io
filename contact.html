@@ -43,24 +43,29 @@
     <p>Have questions about Finance or Technology? We are here to help!</p>
 
     <div class="contact-box">
-        <form action="mailto:support@fintechzhub.com" mathod="post" enctype="text/plain">
-            <div class="input-group">
-                <label>Your Name</label>
-                <input type="text" placeholder="Enter your name" required>
-            </div>
+       <form action="https://formsubmit.co/fintechzhub@gmail.com" method="POST">
+    
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://fintechzhub.github.io/contact.html">
+    <input type="hidden" name="_subject" value="New Message from FinTechz Hub Website!">
 
-            <div class="input-group">
-                <label>Email Address</label>
-                <input type="email" placeholder="Enter your email" required>
-            </div>
+    <div class="input-group" style="margin-bottom: 15px;">
+        <label style="display: block; margin-bottom: 5px; color: #fff;">Your Name</label>
+        <input type="text" name="name" placeholder="Enter your name" required class="manual-input" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #334155; background: #0f172a; color: white;">
+    </div>
 
-            <div class="input-group">
-                <label>Message</label>
-                <textarea rows="5" placeholder="Write your message here..." required></textarea>
-            </div>
+    <div class="input-group" style="margin-bottom: 15px;">
+        <label style="display: block; margin-bottom: 5px; color: #fff;">Email Address</label>
+        <input type="email" name="email" placeholder="Enter your email" required class="manual-input" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #334155; background: #0f172a; color: white;">
+    </div>
 
-            <button type="submit" class="contact-btn">Send Message</button>
-        </form>
+    <div class="input-group" style="margin-bottom: 15px;">
+        <label style="display: block; margin-bottom: 5px; color: #fff;">Message</label>
+        <textarea name="message" rows="5" placeholder="Write your message here..." required class="manual-input" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #334155; background: #0f172a; color: white;"></textarea>
+    </div>
+
+    <button type="submit" class="calc-btn" style="width: 100%; padding: 12px; background: #4ade80; color: #000; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">Send Message</button>
+</form>
     </div>
 
     <div class="direct-info">
