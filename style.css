@@ -972,67 +972,74 @@ input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin
 
 
 
-/* Articles Container ka Layout (Phone aur Laptop dono ke liye) */
+/* --- Articles Container Layout (Phone aur Laptop dono ke liye) --- */
 .article-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    margin-top: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+    padding: 10px;
 }
 
-/* Article Card ka Design */
+/* --- Premium Dark Article Card --- */
 .article-card {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
+    background-color: #1e293b; /* डार्क ब्लू-ग्रे बैकग्राउंड */
+    border: 1px solid #334155; /* हल्का सा बॉर्डर */
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); /* 3D शैडो इफ़ेक्ट */
     display: flex;
     flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
+/* Hover Effect (माउस ले जाने पर कार्ड ऊपर उठेगा) */
 .article-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+    border-color: #3b82f6; /* होवर पर ब्लू बॉर्डर चमकेगा */
 }
 
+/* Title Design */
 .article-card h3 {
     margin-top: 0;
-    font-size: 1.25rem;
-    color: #222;
+    font-size: 1.4rem;
+    color: #f8fafc; /* वाइट टेक्स्ट */
     line-height: 1.4;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
+/* Date Design */
 .article-card .date {
-    font-size: 0.85rem;
-    color: #777;
+    font-size: 0.9rem;
+    color: #94a3b8; /* लाइट ग्रे */
     margin-bottom: 15px;
 }
 
+/* Description Design */
 .article-card p {
-    color: #555;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 20px;
-    flex-grow: 1; /* Button ko hamesha niche rakhne ke liye */
+    color: #cbd5e1; /* पढ़ने में आसान ग्रे टेक्स्ट */
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1; /* बटन को हमेशा नीचे फिक्स रखेगा */
 }
 
-/* Read More Button */
+/* --- Professional Read More Button --- */
 .read-more {
     display: inline-block;
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: #fff;
+    padding: 12px 20px;
+    background-color: #2563eb; /* प्रीमियम ब्लू बटन */
+    color: #ffffff !important;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 8px;
     font-weight: bold;
     text-align: center;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
 }
 
+/* Button Hover Effect */
 .read-more:hover {
-    background-color: #0056b3;
-    color: white;
+    background-color: #1d4ed8;
+    transform: scale(1.02); /* हल्का सा बड़ा होगा */
 }
