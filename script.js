@@ -97,3 +97,51 @@ function calcRD() {
         alert("कृपया सही जानकारी भरें!");
     }
 }
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const articleList = document.getElementById('article-list');
+    
+    if (articleList) {
+        // Page ki category pata karna (jaise 'finance', 'tech', ya 'all')
+        const pageCategory = articleList.getAttribute('data-category');
+
+        fetch('articles.json')
+            .then(response => response.json())
+            .then(data => {
+                articleList.innerHTML = ''; 
+                
+                // Articles ko category ke hisaab se filter karna
+                let filteredArticles = data;
+                if (pageCategory && pageCategory !== 'all') {
+                    filteredArticles = data.filter(article => article.category === pageCategory);
+                }
+
+                // Agar us category mein abhi koi article nahi hai
+                if (filteredArticles.length === 0) {
+                    articleList.innerHTML = '<p style="text-align:center; width:100%; color:#666;">Abhi is category mein koi article nahi hai. Jaldi hi naye articles aayenge!</p>';
+                    return;
+                }
+
+                // Sirf Filtered articles ko screen par dikhana
+                filteredArticles.forEach(article => {
+                    const card = document.createElement('div');
+                    card.className = 'article-card';
+                    card.innerHTML = `
+                        <h3>${article.title}</h3>
+                        <p class="date"><i class="far fa-calendar-alt"></i> ${article.date}</p>
+                        <p>${article.description}</p>
+                        <a href="${article.link}" class="read-more">Pura Padhein</a>
+                    `;
+                    articleList.appendChild(card);
+                });
+            })
+            .catch(error => {
+                console.error('Error loading articles:', error);
+                articleList.innerHTML = '<p>Articles load karne mein error aayi.</p>';
+            });
+    }
+});
