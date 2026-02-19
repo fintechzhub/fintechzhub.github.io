@@ -934,3 +934,35 @@ input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin
 
 
 
+/* ===== Force Google CSE Full Width ===== */
+
+.gsc-control-cse,
+.gsc-control-cse table,
+.gsc-control-cse tbody,
+.gsc-control-cse tr,
+.gsc-control-cse td {
+  width: 100% !important;
+}
+
+.gsc-search-box {
+  width: 100% !important;
+}
+
+.gsc-input-box {
+  width: 100% !important;
+  border: 2px solid #00ff88 !important;
+  border-radius: 12px !important;
+  background: #1a1a1a !important;
+  padding: 10px !important;
+}
+
+.gsc-input {
+  width: 100% !important;
+  font-size: 16px !important;
+  color: #ffffff !important;
+  background: transparent !important;
+}
+
+.gsc-search-button {
+  display: none !important;
+}
