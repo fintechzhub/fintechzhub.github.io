@@ -134,14 +134,14 @@ document.addEventListener("DOMContentLoaded", () => {
                         <h3>${article.title}</h3>
                         <p class="date"><i class="far fa-calendar-alt"></i> ${article.date}</p>
                         <p>${article.description}</p>
-                        <a href="${article.link}" class="read-more">Pura Padhein</a>
+                        <a href="${article.link}" class="read-more">Read more </a>
                     `;
                     articleList.appendChild(card);
                 });
             })
             .catch(error => {
                 console.error('Error loading articles:', error);
-                articleList.innerHTML = '<p>Articles load karne mein error aayi.</p>';
+                articleList.innerHTML = '<p>Articles load karne mein error aa raha hai.</p>';
             });
     }
 });
