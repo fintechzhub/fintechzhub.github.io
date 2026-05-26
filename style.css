@@ -1043,3 +1043,120 @@ input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin
     background-color: #1d4ed8;
     transform: scale(1.02); /* हल्का सा बड़ा होगा */
 }
+
+
+
+
+
+/* =========================================
+   NEW & PREMIUM BOB THEME FOR ARTICLE 
+   ========================================= */
+
+/* आर्टिकल का मेन बॉक्स */
+.single-article {
+    background-color: #ffffff;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* हल्का और प्रीमियम शैडो */
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border-top: 5px solid #F15A22; /* BOB Orange */
+}
+
+/* मेन हेडिंग (H1) */
+.article-header h1 {
+    color: #003874; /* BOB Dark Blue */
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+/* हेडर के नीचे की लाइन - इसे हल्का किया है ताकि साफ दिखे */
+.article-header {
+    border-bottom: 1px solid #e0e0e0; 
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+/* लेखक और तारीख */
+.article-meta {
+    color: #555;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.article-meta i {
+    color: #F15A22; 
+    margin-right: 5px;
+}
+
+/* =========================================
+   सबसे जरूरी: पैराग्राफ टेक्स्ट (इसे डार्क किया है) 
+   ========================================= */
+.article-body p, 
+.article-body li {
+    color: #222222 !important; /* एकदम डार्क ब्लैक/ग्रे रंग */
+    font-size: 1.1rem;
+    line-height: 1.8; /* लाइनों के बीच अच्छी स्पेसिंग */
+    margin-bottom: 18px;
+}
+
+/* अंदर की हेडिंग्स (H2) का नया डिज़ाइन */
+.article-body h2 {
+    color: #003874; 
+    border-left: 5px solid #F15A22; 
+    padding-left: 15px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    background-color: #f4f8fb; /* बहुत हल्का नीला बैकग्राउंड */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 0 5px 5px 0;
+    font-size: 1.6rem;
+}
+
+/* छोटी हेडिंग्स (H3) */
+.article-body h3 {
+    color: #F15A22; 
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+/* बुलेट पॉइंट्स (List) की स्पेसिंग */
+.article-body ul, .article-body ol {
+    margin-left: 20px;
+    margin-bottom: 25px;
+}
+.article-body ul li::marker {
+    color: #F15A22; 
+    font-size: 1.2rem;
+}
+
+/* टेबल का डिज़ाइन */
+.article-body table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.article-body table th {
+    background-color: #003874; 
+    color: #ffffff;
+    padding: 15px;
+    text-align: left;
+    font-size: 1.05rem;
+}
+.article-body table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    font-size: 1rem;
+}
+.article-body table tr:last-child td {
+    border-bottom: none;
+}
+.article-body table tr:hover {
+    background-color: #f9f9f9;
+}
