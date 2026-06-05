@@ -1,3 +1,0 @@
-user-agent: *
-allow:/
-sitemap:https://fintechzhub.github.io/sitemap_live.xml
